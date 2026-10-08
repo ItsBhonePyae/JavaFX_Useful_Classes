@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1151.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Book_Controller">
+   <children>
+      <HBox layoutX="75.0" layoutY="89.0" prefHeight="510.0" prefWidth="741.0">
+         <children>
+            <TableView fx:id="tblBook" prefHeight="510.0" prefWidth="473.0">
+              <columns>
+                <TableColumn fx:id="colID" prefWidth="51.0" text="Book_ID" />
+                <TableColumn fx:id="colTitle" text="Title" />
+                  <TableColumn fx:id="colISBN" prefWidth="38.0" text="ISBN" />
+                  <TableColumn fx:id="colCopies" prefWidth="47.0" text="Copies" />
+                  <TableColumn fx:id="colDescription" prefWidth="101.0" text="Descripton" />
+                  <TableColumn fx:id="colImage" prefWidth="45.0" text="Image" />
+                  <TableColumn fx:id="colPublish" prefWidth="73.0" text="Published_Year" />
+              </columns>
+            </TableView>
+            <AnchorPane fx:id="Book_Pane" prefHeight="510.0" prefWidth="337.0">
+               <children>
+                  <Group layoutX="14.0" layoutY="58.0">
+                     <children>
+                        <Label fx:id="lblTitle" prefHeight="30.0" prefWidth="137.0" text="Title">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblISBN" layoutY="41.0" prefHeight="30.0" prefWidth="137.0" text="ISBN">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAuthor" layoutY="87.0" prefHeight="30.0" prefWidth="137.0" text="Author">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCategory" layoutY="174.0" prefHeight="30.0" prefWidth="137.0" text="Category">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDescription" layoutY="224.0" prefHeight="30.0" prefWidth="137.0" text="Description">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPublishion_Year" layoutY="129.0" prefHeight="30.0" prefWidth="137.0" text="Publishion Year">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCopies" layoutY="290.0" prefHeight="30.0" prefWidth="95.0" text="Copies">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPublisher" layoutY="364.0" prefHeight="30.0" prefWidth="137.0" text="Publisher">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfTitle" layoutX="138.0" layoutY="3.0" promptText="Enter Book Title" />
+                        <TextField fx:id="tfISBN" layoutX="138.0" layoutY="44.0" promptText="Enter Book ISBN" />
+                        <TextField fx:id="tfPublishion_Year" layoutX="141.0" layoutY="132.0" promptText="Enter Publishion Year" />
+                        <TextArea fx:id="taDescription" layoutX="138.0" layoutY="224.0" prefHeight="60.0" prefWidth="149.0" promptText="Enter Description" />
+                        <TextField fx:id="tfCopies" layoutX="139.0" layoutY="292.0" promptText="Enter Book Copies" />
+                        <ComboBox fx:id="cbAuthor" layoutX="138.0" layoutY="87.0" prefWidth="150.0" />
+                        <ComboBox fx:id="cbCategory" layoutX="141.0" layoutY="177.0" prefWidth="150.0" />
+                        <ComboBox fx:id="cbPublisher" layoutX="139.0" layoutY="366.0" prefWidth="150.0" />
+                        <Label fx:id="lblArrivalCopies" layoutY="327.0" prefHeight="30.0" prefWidth="127.0" text="Arrival Copies">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfArrivalCopies" layoutX="140.0" layoutY="327.0" promptText="Arrival Copies" />
+                     </children>
+                  </Group>
+                  <Button fx:id="btnSave" layoutX="14.0" layoutY="479.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="31.0" prefWidth="73.0" text="Save">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnClear" layoutX="218.0" layoutY="479.0" mnemonicParsing="false" onAction="#clickClear" prefHeight="31.0" prefWidth="73.0" text="Clear">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <ImageView fx:id="imageView" fitHeight="348.0" fitWidth="231.0" layoutX="856.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnUpload" layoutX="919.0" layoutY="484.0" mnemonicParsing="false" onAction="#clickUploadPhoto" text="Upload Photo" />
+      <Label fx:id="lblByAuthor" layoutX="7.0" layoutY="45.0" prefHeight="30.0" prefWidth="117.0" text="By Author">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbSelectAuthor" layoutX="105.0" layoutY="48.0" onAction="#clickSelect" prefWidth="150.0" />
+      <Label fx:id="lblByCategory" layoutX="274.0" layoutY="46.0" prefHeight="30.0" prefWidth="117.0" text="By Category">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbSelectCategory" layoutX="398.0" layoutY="49.0" onAction="#clickSelect" prefWidth="150.0" />
+      <Label fx:id="lblByPublisher" layoutX="563.0" layoutY="47.0" prefHeight="30.0" prefWidth="117.0" text="By Publisher">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbSelectPublisher" layoutX="691.0" layoutY="50.0" onAction="#clickSelect" prefWidth="150.0" />
+      <Button fx:id="btnRefresh" layoutX="866.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickRefresh" prefHeight="30.0" prefWidth="73.0" text="Refresh">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="115.0" layoutY="617.0" mnemonicParsing="false" onAction="#clickUpdate" prefHeight="31.0" prefWidth="90.0" text="Update">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="410.0" layoutY="617.0" mnemonicParsing="false" onAction="#clickDelete" prefHeight="31.0" prefWidth="90.0" text="Delete">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
